@@ -1,9 +1,5 @@
 USE AdventureWorks2019;
-GO
-
-CREATE OR ALTER VIEW dbo.vw_FactSalesAnalysis
-AS
-
+CREATE OR ALTER VIEW dbo.vw_FactSalesAnalysis AS
 SELECT
 
 -----------------------------
@@ -113,4 +109,3 @@ LEFT JOIN Person.Person AS P
 
 LEFT JOIN Sales.SalesTerritory AS ST
     ON SOH.TerritoryID = ST.TerritoryID;
-GO
