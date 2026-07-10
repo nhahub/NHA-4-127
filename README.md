@@ -109,19 +109,19 @@ The dashboard includes the following interactive features:
 
 ### Sales Dashboard
 
-![Sales Dashboard](5_Images/Sales_Dashboard.png)
+![Sales Dashboard](./Sales%20Performance%20Analysis/5_Images/Sales_Dashboard.png)
 
 ---
 
 ### Quantity Dashboard
 
-![Quantity Dashboard](5_Images/Quantity_Dashboard.png)
+![Quantity Dashboard](./Sales%20Performance%20Analysis/5_Images/Quantity_Dashboard.png)
 
 ---
 
 ### Profit Dashboard
 
-![Profit Dashboard](5_Images/Profit_Dashboard.png)
+![Profit Dashboard](./Sales%20Performance%20Analysis/5_Images/Profit_Dashboard.png)
 
 ---
 
