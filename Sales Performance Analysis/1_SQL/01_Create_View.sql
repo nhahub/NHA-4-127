@@ -2,9 +2,7 @@ USE AdventureWorks2019;
 CREATE OR ALTER VIEW dbo.vw_FactSalesAnalysis AS
 SELECT
 
------------------------------
 -- Order Information
------------------------------
 SOH.SalesOrderID,
 SOD.SalesOrderDetailID,
 
@@ -22,9 +20,7 @@ DATENAME(WEEKDAY, SOH.OrderDate) AS DayName,
 SOH.Status,
 SOH.OnlineOrderFlag,
 
------------------------------
 -- Customer
------------------------------
 C.CustomerID,
 
 CASE
@@ -33,9 +29,7 @@ CASE
     ELSE CONCAT(P.FirstName,' ',P.LastName)
 END AS CustomerName,
 
------------------------------
 -- Product
------------------------------
 PR.ProductID,
 PR.Name AS ProductName,
 PR.ProductNumber,
@@ -47,15 +41,11 @@ PR.ProductLine,
 PR.StandardCost,
 PR.ListPrice,
 
------------------------------
 -- Category
------------------------------
 PSC.Name AS Subcategory,
 PC.Name AS Category,
 
------------------------------
 -- Sales
------------------------------
 SOD.OrderQty,
 SOD.UnitPrice,
 SOD.UnitPriceDiscount,
@@ -74,17 +64,13 @@ CASE
         ) * 100
 END AS ProfitMargin,
 
------------------------------
 -- Territory
------------------------------
 ST.TerritoryID,
 ST.Name AS Territory,
 ST.CountryRegionCode,
 ST.[Group] AS TerritoryGroup,
 
------------------------------
 -- SalesPerson
------------------------------
 SOH.SalesPersonID
 
 FROM Sales.SalesOrderDetail AS SOD
