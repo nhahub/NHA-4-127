@@ -1,5 +1,7 @@
 USE AdventureWorks2019;
+Go
 CREATE OR ALTER VIEW dbo.vw_FactSalesAnalysis AS
+
 SELECT
 
 -- Order Information
@@ -34,9 +36,10 @@ PR.ProductID,
 PR.Name AS ProductName,
 PR.ProductNumber,
 
-PR.Color,
-PR.Class,
-PR.ProductLine,
+--Clean Data For Missing Values
+ISNULL(PR.Color, 'No Color') AS Color,
+ISNULL(PR.Class, 'No Class') AS Class,
+ISNULL(CAST(PR.ProductLine AS NVARCHAR(8)), 'No Line') AS ProductLine,
 
 PR.StandardCost,
 PR.ListPrice,
@@ -71,7 +74,13 @@ ST.CountryRegionCode,
 ST.[Group] AS TerritoryGroup,
 
 -- SalesPerson
-SOH.SalesPersonID
+SOH.SalesPersonID,
+
+--Clean Data For Missing Values
+CASE
+    WHEN SOH.SalesPersonID IS NULL THEN 'Offline'
+    ELSE 'Online'
+END AS SalesType
 
 FROM Sales.SalesOrderDetail AS SOD
 
